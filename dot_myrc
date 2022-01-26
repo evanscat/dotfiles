@@ -1,0 +1,15 @@
+#!/bin/zsh
+# 修改iterm tab颜色
+function set_tab_color(){
+    echo -ne "\033]6;1;bg;red;brightness;$1\a"
+    echo -ne "\033]6;1;bg;green;brightness;$2\a"
+    echo -ne "\033]6;1;bg;blue;brightness;$3\a"
+}
+for file in `ls $HOME/.work/*.sh`
+do
+    source $file
+done
+export GOPATH=/Users/shensq/Workspace/go
+export GOPROXY=https://goproxy.cn,direct
+export GO111MODULE=on
+export PATH=$HOME/Workspace/bin:$GOPATH/bin:/usr/local/go/bin:$PATH
